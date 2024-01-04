@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 let isConnected = false; // track the connection status
 
-export const connectDB = async () => {
+export const connectToDB = async () => {
   mongoose.set("strictQuery", true);
 
   if (isConnected) {
@@ -20,6 +20,6 @@ export const connectDB = async () => {
 
     console.log("MongoDB is connected");
   } catch (error) {
-    console.log(error);
+    console.log("MongoDB connection ERROR", error);
   }
 };
